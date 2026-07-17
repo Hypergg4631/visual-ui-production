@@ -92,7 +92,7 @@ python -m pip install -r requirements.txt
 在 Codex 中调用 `$skill-installer`，要求它安装以下目录：
 
 ```text
-https://github.com/<your-github-name>/visual-ui-production/tree/main/skills/visual-ui-production
+https://github.com/Hypergg4631/visual-ui-production/tree/main/skills/visual-ui-production
 ```
 
 安装完成后，新建一个 Codex 任务或重新启动 Codex，使 Skill 被重新发现。
