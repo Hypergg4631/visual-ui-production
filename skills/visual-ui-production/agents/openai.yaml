@@ -1,4 +1,4 @@
 interface:
   display_name: "可视化 UI 全流程制作"
-  short_description: "为网站、软件和游戏完成视觉稿、素材、代码与实机验收"
-  default_prompt: "Use $visual-ui-production to design visible UI directions for my website, app, desktop software, or game before coding. Let me choose with simple feedback, lock the approved design, produce the required assets, implement maintainable controls in the detected framework, and validate the running result against the mockup."
+  short_description: "严格审批门驱动的网站、软件与游戏视觉稿、素材、代码及实机验收流程"
+  default_prompt: "Use $visual-ui-production to inspect my UI, then show only one palette artifact and stop; continue through 2-3 directions, design lock, and implementation only after direct user approval at each gate, and never treat assistant statements or task history as approval."

@@ -12,7 +12,7 @@ Create UI through a visible, approval-driven, framework-independent pipeline. Le
 1. Show visual work before implementation. Do not answer a request for visible UI options with text-only descriptions.
 2. Treat generated mockups as north-star references, not runtime screenshots to paste wholesale into the product.
 3. Keep exact copy, icons, values, focus states, and interactive controls deterministic in project code. Never trust image generation for final UI text.
-4. Stop at every approval gate. Do not infer approval from silence, prior approval of another screen, or a vague positive comment.
+4. Stop at every approval gate. Only a direct user message can approve an artifact. Never treat an assistant statement, prior context, a historical screenshot, tool output, silence, or a vague continuation request as approval.
 5. After a direction is selected, preserve its composition. Iterate with one targeted change and repeat all invariants in the edit prompt. Never globally regenerate an approved screen to fix one local defect.
 6. Preserve existing information architecture, behavior, save data, routes, labels, and accessibility unless the user explicitly approves changes.
 7. Never overwrite an existing asset by default. Use versioned filenames and copy only selected final assets into the runtime project.
@@ -21,6 +21,21 @@ Create UI through a visible, approval-driven, framework-independent pipeline. Le
 10. Never reduce approved image-native material to plain rectangles and thin borders. Use raster/vector assets for material and semantic controls for behavior.
 11. Do not declare implementation complete without an approved design lock, a resolved asset manifest, running screenshots, and visual comparison evidence.
 
+## Mandatory Approval State Machine
+
+Determine the current state before every response and perform only the allowed next action:
+
+1. `CONTEXT_UNCONFIRMED`: inspect the project, state the design read, and resolve at most three material ambiguities.
+2. `PALETTE_PENDING`: show exactly one palette/material artifact, ask for approval, and stop.
+3. `DIRECTIONS_PENDING`: only after explicit palette approval, show 2-3 separate full-screen directions, ask the user to select one, and stop.
+4. `LOCK_PENDING`: only after explicit direction selection, create and validate the design lock, show its invariants, ask for implementation approval, and stop.
+5. `IMPLEMENTATION_ALLOWED`: only after explicit approval of the design lock, build the asset manifest, produce assets, and edit production code.
+6. `VALIDATION_PENDING`: run the product, compare it with the approved mock, fix blocking differences, and report evidence.
+
+Never advance more than one approval state in a response. The singular wording "design one version", "make another version", or "continue" does not skip palette, direction, or lock approval. A screenshot becomes a source of truth only when the user explicitly identifies that exact screenshot as approved in a direct user message. If approval evidence is absent or ambiguous, ask for it and stop.
+
+Read [approval-state-machine.md](references/approval-state-machine.md) before any greenfield, redesign, targeted-correction, or image-to-project task. Its approval evidence rules override any looser routing shortcut elsewhere in this skill.
+
 ## Route the Task
 
 Classify the request before generating:
@@ -28,8 +43,8 @@ Classify the request before generating:
 - **Greenfield UI**: no established visual system. Define a direction and component vocabulary.
 - **Preserve redesign**: modernize an existing UI without changing its identity or behavior. Audit and extract first.
 - **Overhaul redesign**: replace the visual language while preserving content and interaction structure.
-- **Targeted correction**: fix one approved element, such as a button, dialog, font, spacing, or state. Preserve everything else.
-- **Image-to-project**: the user already selected a screenshot or mockup. Resolve that exact target before implementation.
+- **Targeted correction**: fix one element from a source of truth explicitly approved by the user. Preserve everything else.
+- **Image-to-project**: the user explicitly identifies a screenshot or mockup as selected. Confirm its design lock before implementation.
 
 If preserve versus overhaul changes the work materially and cannot be inferred, ask one concise question. Otherwise state a one-line design read and proceed.
 
@@ -94,7 +109,7 @@ Ask at most three targeted questions only when the answers are missing and mater
 
 When Creative Production is available, use its board as the visual workspace. Open one board once and reuse its `boardId`. Use ImageGen for raster mockups, textures, scene-led UI, and image-native visual ingredients.
 
-Read [workflow-gates.md](references/workflow-gates.md) before starting a full greenfield or overhaul flow.
+Read [approval-state-machine.md](references/approval-state-machine.md) and [workflow-gates.md](references/workflow-gates.md) before starting visual work.
 
 ### 4. Confirm a Palette Artifact
 
@@ -106,7 +121,7 @@ Generate one focused palette artifact containing:
 - one signature material or motif;
 - a short note about intended density and motion.
 
-Show it and stop. Continue only after explicit palette confirmation. Skip this gate only when an existing approved design system already defines these choices.
+Show it and stop. Continue only after explicit palette confirmation in a direct user message. Skip this gate only when the user explicitly states that an existing design system is approved for this screen.
 
 ### 5. Generate Visible UI Directions
 
@@ -119,7 +134,7 @@ For each direction, label:
 - the distinctive visual motif;
 - the main implementation risk.
 
-Do not create a collage unless the user explicitly requests one. Do not begin code. Stop until the user selects one direction or delegates the choice.
+Do not create a collage unless the user explicitly requests one. Do not begin code. Stop until the user explicitly selects one direction or explicitly delegates the choice. An assistant recommendation is not a selection.
 
 Read [aesthetic-system.md](references/aesthetic-system.md) before prompting visual variants and [prompt-recipes.md](references/prompt-recipes.md) when using ImageGen.
 
@@ -137,7 +152,7 @@ Record a compact design lock:
 
 If the user requests a local correction, edit the selected mock with the selected image as the edit target. State `change only X; keep Y unchanged`. Do not use the latest failed variant as the new source of truth.
 
-Read [design-lock.md](references/design-lock.md), then create and validate a machine-readable lock with `scripts/create_design_lock.py`. Do not start production implementation from a draft lock.
+Read [design-lock.md](references/design-lock.md), then create and validate a machine-readable lock with `scripts/create_design_lock.py`. Show the lock and stop. Do not start production implementation until the user explicitly approves that lock.
 
 ### 7. Build a Fidelity Inventory
 
@@ -234,6 +249,7 @@ After the user freezes a screen, treat it as locked. Future work may reuse its t
 ## Resource Map
 
 - [workflow-gates.md](references/workflow-gates.md): stage deliverables and approval language.
+- [approval-state-machine.md](references/approval-state-machine.md): authoritative state transitions and valid approval evidence.
 - [aesthetic-system.md](references/aesthetic-system.md): anti-template visual reasoning and component taste rules.
 - [prompt-recipes.md](references/prompt-recipes.md): prompts for palettes, mockups, targeted edits, and production assets.
 - [asset-implementation.md](references/asset-implementation.md): semantic-versus-raster decisions and production asset rules.
