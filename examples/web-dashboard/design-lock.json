@@ -1,0 +1,31 @@
+{
+  "schema_version": "2.0",
+  "status": "approved",
+  "project": "synthetic-northstar-dashboard",
+  "screen": "operations-overview",
+  "framework": "static-web",
+  "selected_mock": "mockup.svg",
+  "viewport": {"width": 1366, "height": 768},
+  "task_type": "overhaul-redesign",
+  "style": {
+    "mood": "calm, operational, accountable",
+    "palette": {
+      "background": "#f4f7f3",
+      "surface": "#ffffff",
+      "primary": "#176b5b",
+      "accent": "#c8553d",
+      "text": "#12201d"
+    },
+    "typography": "system sans serif",
+    "signature_materials": ["soft paper surface", "compact metric bars"],
+    "avoid": ["decorative gradients", "card nesting"]
+  },
+  "invariants": ["Primary queue remains visible", "All values remain runtime text"],
+  "components": ["Header", "Metric summary", "Priority queue", "Handoff action"],
+  "states": ["idle", "hover", "focus"],
+  "approval": {
+    "approved_by": "anonymous-example-review",
+    "approved_at": "2026-07-17T00:00:00Z",
+    "notes": "Synthetic repository example."
+  }
+}

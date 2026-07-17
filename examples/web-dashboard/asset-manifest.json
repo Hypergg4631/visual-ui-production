@@ -1,0 +1,32 @@
+{
+  "schema_version": "2.0",
+  "design_lock": "design-lock.json",
+  "framework": "static-web",
+  "screen": "operations-overview",
+  "components": [
+    {
+      "id": "header",
+      "name": "Header",
+      "method": "semantic-control",
+      "consumer": "index.html .site-header"
+    },
+    {
+      "id": "metric-summary",
+      "name": "Metric summary",
+      "method": "runtime-text",
+      "consumer": "index.html .hero-media"
+    },
+    {
+      "id": "priority-queue",
+      "name": "Priority queue",
+      "method": "semantic-control",
+      "consumer": "index.html #queues"
+    },
+    {
+      "id": "handoff-action",
+      "name": "Handoff action",
+      "method": "semantic-control",
+      "consumer": "index.html #handoff"
+    }
+  ]
+}

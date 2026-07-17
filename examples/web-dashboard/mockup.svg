@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1366" height="768" viewBox="0 0 1366 768" role="img" aria-labelledby="title desc">
+  <title id="title">Northstar operations dashboard mockup</title>
+  <desc id="desc">A synthetic dashboard with a priority message, two metrics, and three queue items.</desc>
+  <rect width="1366" height="768" fill="#f4f7f3"/>
+  <rect width="1366" height="72" fill="#ffffff"/>
+  <circle cx="54" cy="36" r="13" fill="#176b5b"/>
+  <text x="78" y="43" font-family="system-ui,sans-serif" font-size="20" font-weight="700" fill="#12201d">Northstar Ops</text>
+  <text x="72" y="174" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="#176b5b">SYNTHETIC OPERATIONS WORKSPACE</text>
+  <text x="72" y="232" font-family="system-ui,sans-serif" font-size="44" font-weight="700" fill="#12201d">One calm view of today’s operational load.</text>
+  <text x="72" y="276" font-family="system-ui,sans-serif" font-size="20" fill="#5c6a66">Priority, ownership, and handoff health in a single readable surface.</text>
+  <rect x="72" y="316" width="230" height="50" rx="6" fill="#176b5b"/>
+  <text x="95" y="348" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="#ffffff">Review priority queue</text>
+  <rect x="744" y="128" width="526" height="246" rx="8" fill="#ffffff" stroke="#d9e1dc"/>
+  <text x="782" y="175" font-family="system-ui,sans-serif" font-size="16" fill="#5c6a66">Response health</text>
+  <text x="782" y="245" font-family="system-ui,sans-serif" font-size="58" font-weight="700" fill="#12201d">96.4%</text>
+  <rect x="1030" y="166" width="196" height="154" rx="8" fill="#e7efe9"/>
+  <text x="1056" y="204" font-family="system-ui,sans-serif" font-size="15" fill="#5c6a66">Open queue</text>
+  <text x="1056" y="268" font-family="system-ui,sans-serif" font-size="52" font-weight="700" fill="#12201d">27</text>
+  <text x="72" y="454" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="#176b5b">PRIORITY QUEUE</text>
+  <g font-family="system-ui,sans-serif">
+    <rect x="72" y="482" width="380" height="156" rx="8" fill="#ffffff" stroke="#d9e1dc"/>
+    <text x="98" y="526" font-size="19" font-weight="700" fill="#12201d">P-104 · Delivery exception</text>
+    <text x="98" y="561" font-size="16" fill="#5c6a66">Owned · Due 10:15</text>
+    <rect x="476" y="482" width="380" height="156" rx="8" fill="#ffffff" stroke="#d9e1dc"/>
+    <text x="502" y="526" font-size="19" font-weight="700" fill="#12201d">P-109 · Account review</text>
+    <text x="502" y="561" font-size="16" fill="#c8553d">Needs owner · Due 10:40</text>
+    <rect x="880" y="482" width="390" height="156" rx="8" fill="#ffffff" stroke="#d9e1dc"/>
+    <text x="906" y="526" font-size="19" font-weight="700" fill="#12201d">P-117 · Routing mismatch</text>
+    <text x="906" y="561" font-size="16" fill="#5c6a66">Owned · Due 11:05</text>
+  </g>
+</svg>

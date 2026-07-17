@@ -1,0 +1,20 @@
+{
+  "schema_version": "2.0",
+  "status": "approved",
+  "project": "synthetic-archive-menu",
+  "screen": "save",
+  "framework": "renpy",
+  "selected_mock": "mockup.svg",
+  "viewport": {"width": 1920, "height": 1080},
+  "style": {
+    "mood": "archival, restrained, tactile",
+    "palette": {"background": "#171916", "surface": "#e8dfca", "primary": "#a43e32", "text": "#29251f"},
+    "typography": "serif headings with readable runtime body text",
+    "signature_materials": ["aged paper edge", "oxide-red index mark"],
+    "avoid": ["baked slot text", "full-screen screenshot buttons"]
+  },
+  "invariants": ["Save compatibility remains unchanged", "Slot text is runtime rendered"],
+  "components": ["Backdrop", "Archive frame", "Slot grid", "Pagination", "Return action"],
+  "states": ["idle", "hover", "focus", "selected", "disabled"],
+  "approval": {"approved_by": "anonymous-example-review", "approved_at": "2026-07-17T00:00:00Z"}
+}

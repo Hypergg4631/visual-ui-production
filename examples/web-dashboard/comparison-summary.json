@@ -1,0 +1,7 @@
+{
+  "viewport": [1366, 768],
+  "states_reviewed": ["desktop", "mobile", "keyboard-focus"],
+  "blocking_differences": 0,
+  "passed": true,
+  "note": "Synthetic example summary; CI performs a fresh executable screenshot-tool test."
+}

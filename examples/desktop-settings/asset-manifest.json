@@ -1,0 +1,12 @@
+{
+  "schema_version": "2.0",
+  "design_lock": "design-lock.json",
+  "framework": "tkinter",
+  "screen": "preferences",
+  "components": [
+    {"id": "navigation", "name": "Navigation", "method": "semantic-control", "consumer": "demo.py navigation"},
+    {"id": "settings-form", "name": "Settings form", "method": "semantic-control", "consumer": "demo.py form"},
+    {"id": "status-line", "name": "Status line", "method": "runtime-text", "consumer": "demo.py status_var"},
+    {"id": "save-button", "name": "Save button", "method": "semantic-control", "consumer": "demo.py save_button"}
+  ]
+}

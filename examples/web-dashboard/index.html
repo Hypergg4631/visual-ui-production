@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="data:,">
+    <title>Northstar Operations — Synthetic UI Example</title>
+    <meta
+      name="description"
+      content="An anonymous, synthetic operations dashboard used to demonstrate the Visual UI Production workflow."
+    >
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Northstar Operations home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Northstar Ops</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#overview">Overview</a>
+        <a href="#queues">Queues</a>
+        <a href="#handoff">Handoff</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Synthetic operations workspace · 09:42 UTC</p>
+          <h1>One calm view of today’s operational load.</h1>
+          <p class="lede">
+            Northstar turns queue pressure, response health, and ownership into a
+            readable handoff surface. All names and values on this page are fictional.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#queues">Review priority queue</a>
+            <a class="button secondary" href="#handoff">Open handoff notes</a>
+          </div>
+        </div>
+        <div class="hero-media" aria-label="Synthetic dashboard preview">
+          <div class="media-panel panel-one">
+            <span class="metric-label">Response health</span>
+            <strong>96.4%</strong>
+            <small>+1.8 points this week</small>
+          </div>
+          <div class="media-panel panel-two">
+            <span class="metric-label">Open queue</span>
+            <strong>27</strong>
+            <small>8 require ownership</small>
+          </div>
+          <div class="media-panel panel-three" aria-hidden="true">
+            <i style="height: 46%"></i><i style="height: 72%"></i><i style="height: 58%"></i>
+            <i style="height: 86%"></i><i style="height: 64%"></i>
+          </div>
+        </div>
+      </section>
+
+      <section class="section band" id="overview">
+        <div class="section-heading">
+          <p class="eyebrow">Shift overview</p>
+          <h2>Signals that deserve attention, without dashboard noise.</h2>
+        </div>
+        <div class="work-grid">
+          <article class="work-card">
+            <span class="card-kicker">Stable</span>
+            <h3>Intake latency</h3>
+            <p><strong>4m 12s</strong> median, safely below the eight-minute threshold.</p>
+          </article>
+          <article class="work-card">
+            <span class="card-kicker">Watch</span>
+            <h3>Unassigned work</h3>
+            <p><strong>8 items</strong> need owners before the 11:00 handoff.</p>
+          </article>
+          <article class="work-card">
+            <span class="card-kicker">Improving</span>
+            <h3>First-touch quality</h3>
+            <p><strong>92%</strong> passed review, up four points from the prior shift.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section split" id="queues">
+        <div>
+          <p class="eyebrow">Priority queue</p>
+          <h2>Ownership before ornament.</h2>
+        </div>
+        <div class="service-list">
+          <article>
+            <h3>P-104 · Delivery exception</h3>
+            <p>Owner: Shift A · Due 10:15 · Waiting on one verified response.</p>
+          </article>
+          <article>
+            <h3>P-109 · Account review</h3>
+            <p>Owner: Unassigned · Due 10:40 · Needs a second-person check.</p>
+          </article>
+          <article>
+            <h3>P-117 · Routing mismatch</h3>
+            <p>Owner: Shift B · Due 11:05 · Reproduction notes attached.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="handoff">
+      <div>
+        <p class="eyebrow">Handoff ready</p>
+        <h2>Eight owned actions, three watch items, zero hidden blockers.</h2>
+      </div>
+      <a class="button primary" href="#top">Return to overview</a>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

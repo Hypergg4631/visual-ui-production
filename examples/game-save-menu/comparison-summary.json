@@ -1,0 +1,7 @@
+{
+  "viewport": [1920, 1080],
+  "states_reviewed": ["empty-slot", "occupied-slot", "hover", "keyboard-focus"],
+  "blocking_differences": 0,
+  "passed": true,
+  "note": "Synthetic documentation review."
+}

@@ -1,0 +1,7 @@
+{
+  "viewport": [1024, 720],
+  "states_reviewed": ["default", "keyboard-focus", "saved"],
+  "blocking_differences": 0,
+  "passed": true,
+  "note": "Synthetic documentation review."
+}

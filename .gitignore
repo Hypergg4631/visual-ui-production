@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Virtual environments and local configuration
+.venv/
+venv/
+.env
+.env.*
+
+# Generated and temporary files
+tmp/
+temp/
+output/
+outputs/
+reports/
+.test-v2/
+*.log
+*.tmp
+
+# Generated visual drafts should be reviewed before publishing
+generated_images/
+creative_drafts/
+test_captures/
+comparison-output/
+
+# Local packages and release output
+build/
+dist/
+*.zip
+*.sha256
+
+# Editors and operating systems
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+desktop.ini

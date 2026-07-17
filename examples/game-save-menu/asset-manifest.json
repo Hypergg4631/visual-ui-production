@@ -1,0 +1,13 @@
+{
+  "schema_version": "2.0",
+  "design_lock": "design-lock.json",
+  "framework": "renpy",
+  "screen": "save",
+  "components": [
+    {"id": "backdrop", "name": "Backdrop", "method": "native-shape"},
+    {"id": "archive-frame", "name": "Archive frame", "method": "native-shape"},
+    {"id": "slot-grid", "name": "Slot grid", "method": "semantic-control", "consumer": "screen.rpy grid"},
+    {"id": "pagination", "name": "Pagination", "method": "semantic-control", "consumer": "screen.rpy page controls"},
+    {"id": "return-action", "name": "Return action", "method": "semantic-control", "consumer": "screen.rpy Return action"}
+  ]
+}

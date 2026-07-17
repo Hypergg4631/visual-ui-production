@@ -1,0 +1,20 @@
+{
+  "schema_version": "2.0",
+  "status": "approved",
+  "project": "synthetic-quiet-settings",
+  "screen": "preferences",
+  "framework": "tkinter",
+  "selected_mock": "mockup.svg",
+  "viewport": {"width": 1024, "height": 720},
+  "style": {
+    "mood": "quiet, precise, desktop-native",
+    "palette": {"background": "#eef1f4", "surface": "#ffffff", "primary": "#315c88", "text": "#18212a"},
+    "typography": "system UI",
+    "signature_materials": ["subtle section dividers"],
+    "avoid": ["nested cards", "hidden save state"]
+  },
+  "invariants": ["Save status is always visible", "Keyboard traversal follows reading order"],
+  "components": ["Navigation", "Settings form", "Status line", "Save button"],
+  "states": ["idle", "focus", "disabled"],
+  "approval": {"approved_by": "anonymous-example-review", "approved_at": "2026-07-17T00:00:00Z"}
+}
